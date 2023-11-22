@@ -10,7 +10,7 @@ import InputAcctFrom from "../components/InputAcctFrom"
 import InputDate from "../components/InputDate"
 import InputAcctTo from "../components/InputAcctTo"
 import InputAmt from "../components/InputAmount"
-import OutputBalance from '../components/OutputBalance'
+// import OutputBalance from '../components/OutputBalance'
 
 
 axios.defaults.headers.put['Content-Type'] = 'application/json';
@@ -141,13 +141,6 @@ export default function Transfer() {
             }}>
                 <div className="row" style={{ width: '100%' }}>
                     <InputFormTransfer />
-                </div>
-                // <div className="row" style={{ width: '100%' }}>
-                //     <div style={{ width: '100%', float: 'left' }}>
-                //         <h2 style={{ marginTop: '50px' }}></h2>
-                //         <OutputBalance label='Available Balance' />
-                //     </div>
-                // </div>
             </TransferToEditContext.Provider>
 
         </>

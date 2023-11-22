@@ -28,12 +28,12 @@ function InputFormTransfer() {
         editMode, setEditMode,
         TransferFrom, setEditTransferFrom,
         TransferTo, setEditTransferTo,
-        // AidToEdit, setAidToEdit,
+        Aid, setAid,
         DateToEdit, setDateToEdit,
         AmtToEdit, setAmtToEdit,
         reloadTransfers, setReloadTransfers
     } = useContext(TransferToEditContext);
-    
+
     function resetInputState() {  // Clear  
 
         setEditTransferFrom('')
@@ -46,7 +46,19 @@ function InputFormTransfer() {
 
         if (editMode === 'create') {
 
-            var newTransfer = { 'Aid': small_id, 'TransferFrom': TransferFrom, 'TransferTo': TransferTo, 'Date': DateToEdit, 'Amt': AmtToEdit }
+            // var newTransfer = { 'Aid': small_id, 'TransferFrom': TransferFrom, 'TransferTo': TransferTo, 'Date': DateToEdit, 'Amt': AmtToEdit }
+
+            var newTransfer = {
+                "TRANSFER_ID": small_id,
+                "ACCOUNT_ID_FROM": TransferFrom,
+                "ACCOUNT_ID_TO": TransferTo,
+                "DATE": DateToEdit,
+                "AMOUNT": AmtToEdit
+            }
+
+            console.log('TransferForm')
+            console.log(newTransfer)
+
             axios.put('http://localhost:3001/Transfer', newTransfer).then((response) => {
                 resetInputState();
                 setReloadTransfers(!reloadTransfers)
@@ -65,7 +77,7 @@ function InputFormTransfer() {
                     <tr>
                         <td width={'20%'}><b>Transfer ID</b></td>
                         <td>
-                            <AutoId label='Transfer ID' value={small_id} setValue={small_id} />
+                            <AutoId label='Transfer ID' value={Aid} setValue={setAid} />
                         </td>
                     </tr>
                     <tr>
@@ -94,7 +106,7 @@ function InputFormTransfer() {
                     </tr>
                     <tr>
                         <td colSpan={'2'} style={{ textAlign: 'left' }}>
-                            <input type={'reset'} value={'Clear'}  onClick={resetInputState}/>
+                            <input type={'reset'} value={'Clear'} onClick={resetInputState} />
                             <input type={'button'} value='Transfer Now' onClick={TransferForm} />
                         </td>
                     </tr>
@@ -108,7 +120,7 @@ function InputFormTransfer() {
 export default function Transfer() {
 
     const [editMode, setEditMode] = useState('create')
-    const [Aid, small_id] = useState('')
+    const [Aid, setAid] = useState('')
     const [TransferFrom, setEditTransferFrom] = useState('')
     const [TransferTo, setEditTransferTo] = useState('')
     const [DateToEdit, setDateToEdit] = useState('')
@@ -120,7 +132,7 @@ export default function Transfer() {
         <>
             <TransferToEditContext.Provider value={{
                 editMode, setEditMode,
-                Aid, small_id,
+                Aid, setAid,
                 TransferFrom, setEditTransferFrom,
                 TransferTo, setEditTransferTo,
                 DateToEdit, setDateToEdit,
@@ -128,18 +140,18 @@ export default function Transfer() {
                 reloadTransfers, setReloadTransfers
             }}>
                 <div className="row" style={{ width: '100%' }}>
-                    <InputFormTransfer/>
-                </div>                
+                    <InputFormTransfer />
+                </div>
                 <div className="row" style={{ width: '100%' }}>
                     <div style={{ width: '100%', float: 'left' }}>
                         <h2 style={{ marginTop: '50px' }}></h2>
-                        <OutputBalance label='Available Balance'/>
+                        <OutputBalance label='Available Balance' />
                     </div>
                 </div>
             </TransferToEditContext.Provider>
 
         </>
 
-        
+
     )
 };

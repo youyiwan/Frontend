@@ -142,12 +142,12 @@ export default function Transfer() {
                 <div className="row" style={{ width: '100%' }}>
                     <InputFormTransfer />
                 </div>
-                <div className="row" style={{ width: '100%' }}>
-                    <div style={{ width: '100%', float: 'left' }}>
-                        <h2 style={{ marginTop: '50px' }}></h2>
-                        <OutputBalance label='Available Balance' />
-                    </div>
-                </div>
+                // <div className="row" style={{ width: '100%' }}>
+                //     <div style={{ width: '100%', float: 'left' }}>
+                //         <h2 style={{ marginTop: '50px' }}></h2>
+                //         <OutputBalance label='Available Balance' />
+                //     </div>
+                // </div>
             </TransferToEditContext.Provider>
 
         </>

@@ -7,7 +7,7 @@ export default function InputTransferId({ label, value, setValue }) {
     return (
         <input
             // type={v4}
-            placeholder={`Auto Generate ${label} `}
+            placeholder={`Leave this blank. ${label} is auto generated`}
             required={true}
             style={{ width: '300px' }}
             value={value}

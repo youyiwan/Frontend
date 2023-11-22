@@ -5,8 +5,8 @@ import Layout from "./pages/Layout";
 import Index from "./pages/Index";
 import image from './images/login_image.jpg';
 import Transfer from "./pages/Transfer";
+import Payment from "./pages/Payment";
 import Logout from "./pages/Logout";
-
 
 import './App.css';
 
@@ -111,6 +111,7 @@ function App() {
                   <Route index element={<Index />} />
                   <Route path="Index" element={<Index />} />
                   <Route path="Transfer" element={<Transfer />} />
+                  <Route path="Payment" element={<Payment />} />
                   <Route path="Logout" element={<Logout />} />
               </Route>
               </Routes>

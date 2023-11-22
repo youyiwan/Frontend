@@ -141,6 +141,7 @@ export default function Transfer() {
             }}>
                 <div className="row" style={{ width: '100%' }}>
                     <InputFormTransfer />
+                </div>
             </TransferToEditContext.Provider>
 
         </>

@@ -2,7 +2,8 @@ export default function InputAcctFrom({ label, value, setValue }) {
     return (
         <input
             type={"text"}
-            placeholder={`Enter Your ${label} ID`}
+            autoFocus={true}
+            placeholder={`Please enter Your ${label} ID`}
             required={true}
             style={{ width: '300px' }}
             value={value}

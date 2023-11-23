@@ -76,7 +76,7 @@ function InputFormTransfer() {
             <table border={'1'} style={{ width: '100%', position: "relative" }} >
                 <tbody>
                     <tr>
-                        <td width={'20%'}><b>Transfer ID</b></td>
+                        <td width={'20%'}><b>Payment ID</b></td>
                         <td>
                             <AutoId label='Transfer ID' value={Aid} setValue={setAid} />
                         </td>
@@ -106,7 +106,7 @@ function InputFormTransfer() {
                         </td>
                     </tr>
                     <tr>
-                        <td colSpan={'2'} style={{ textAlign: 'left' }}>
+                        <td colSpan={'2'} style={{ textAlign: 'left'}}>
                             <input type={'reset'} value={'Clear'} onClick={resetInputState} />
                             <input type={'button'} value='Transfer Now' onClick={TransferForm} />
                         </td>

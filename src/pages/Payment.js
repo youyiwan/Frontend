@@ -108,7 +108,7 @@ function InputFormTransfer() {
                     <tr>
                         <td colSpan={'2'} style={{ textAlign: 'left'}}>
                             <input type={'reset'} value={'Clear'} onClick={resetInputState} />
-                            <input type={'button'} value='Transfer Now' onClick={TransferForm} />
+                            <input type={'button'} value='Pay Now' onClick={TransferForm} />
                         </td>
                     </tr>
                 </tbody>
